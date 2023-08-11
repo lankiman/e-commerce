@@ -119,6 +119,16 @@ function App() {
             : "hidden"
         }`}
       ></div>
+      <div
+        className={`bg-white w-2/3 h-screen md:z-0 z-40 fixed ${
+          nav
+            ? "absolute animate__animated animate__slideInLeft"
+            : "absolute animate__animated animate__fadeOutLeft animate__faster"
+        } ${menuVisible ? "" : "hidden"}`}
+      >
+        <SideMenu navStat={navClick} />
+      </div>
+
       <section className="relative">
         <div className="w-full">
           <Navigation
@@ -141,16 +151,6 @@ function App() {
           />
         </div>
       </section>
-
-      <div
-        className={`bg-white w-2/3 h-screen md:z-0 z-30 ${
-          nav
-            ? "absolute animate__animated animate__slideInLeft"
-            : "absolute animate__animated animate__fadeOutLeft animate__faster"
-        } ${menuVisible ? "" : "hidden"}`}
-      >
-        <SideMenu navStat={navClick} />
-      </div>
 
       <section className="md:hidden mobile_section absolute ">
         <ContentMobile
